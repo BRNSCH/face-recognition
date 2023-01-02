@@ -1,0 +1,10 @@
+.rank{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-content:center; 
+    align-items: center;
+    font-size: 26px;
+    font-weight: bold;
+    color: rgb(63, 61, 61);
+}

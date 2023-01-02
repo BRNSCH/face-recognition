@@ -1,0 +1,49 @@
+.form{
+    max-width: 720px;
+    display: flex;
+    align-items: center;
+    
+    
+}
+.form-div{
+    max-width: 770px;
+    border: 1px solid rgb(7, 7, 7);
+    border-radius: 4px;
+    padding: 20px 20px 60px;
+    box-shadow: rgba(0, 0, 0, 0.527) 0px 22px 70px 4px;
+    background-color: black;
+    color: antiquewhite;
+        background-image:
+            radial-gradient(white, rgba(255, 255, 255, .2) 2px, transparent 40px),
+            radial-gradient(white, rgba(255, 255, 255, .15) 1px, transparent 30px),
+            radial-gradient(white, rgba(255, 255, 255, .1) 2px, transparent 40px),
+            radial-gradient(rgba(255, 255, 255, .4), rgba(255, 255, 255, .1) 2px, transparent 30px);
+        background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+        background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+}
+.form-p{
+    text-align: center;
+}
+.form input{
+    box-shadow: rgba(0, 0, 0, 0.527) 0px 22px 70px 4px;   
+    border: none;
+    background-color: #989898;
+    text-align: center;
+}
+ input:focus {
+     outline: 1px solid rgb(168, 74, 168);
+
+ }
+.form button{
+    font-size:18px ;
+    text-align: center;
+    padding: 10px;
+    color: rgb(241, 234, 240);
+    font-weight: bold;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 0%, rgba(0, 0, 0, 0.15) 100%), radial-gradient(at top center, rgba(255, 255, 255, 0.40) 0%, rgba(0, 0, 0, 0.40) 120%) #989898;
+    background-blend-mode: multiply, multiply;
+    border-radius: 3px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+
+}

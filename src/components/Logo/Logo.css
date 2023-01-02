@@ -1,0 +1,16 @@
+.tilt-width{
+    width:100px;
+    background-image: linear-gradient(to top, #d299c2 0%, #fef9d7 100%);
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+.tilt-width div{
+    
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 0 auto;
+   font-size: 22px;
+   
+  
+}
