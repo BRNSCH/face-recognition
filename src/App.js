@@ -60,8 +60,8 @@ class App extends Component {
 
   }
 
-  onRouteChange = () => {
-    this.setState({ route: 'home' });
+  onRouteChange = (route) => {
+    this.setState({ route:route });
   }
 
   render() {
@@ -72,7 +72,7 @@ class App extends Component {
       <>
         <ParticlesBg className="App" type="cobweb" color="#64748b"  num={200} bg={true} />
         <div >       
-          <Navigation />
+          <Navigation onRouteChange={this.onRouteChange}/>
 
           {this.state.route === 'signin'
             ? <SignIn onRouteChange={this.onRouteChange} />
