@@ -4,6 +4,7 @@ import Logo from './components/Logo/Logo';
 import Rank from './components/Rank/Rank';
 import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
+import Signin from './components/Signin/Signin';
 import ParticlesBg from 'particles-bg';
 import Clarifai  from 'clarifai';
 import 'tachyons';
@@ -26,16 +27,15 @@ class App extends Component {
   }
 
   calculateFaceLocation = (data) => {
-    const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box
-    const image = document.getElementById('inputimage')
+    const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
+    const image = document.getElementById('inputimage');
     const width = Number(image.width);
     const height = Number(image.height);
-    console.log(width, height);
     return {
       leftCol: clarifaiFace.left_col * width,
       topRow: clarifaiFace.top_row * height,
-      rightCol: width - (clarifaiFace.top_row * width),
-      bottomRow: height - (clarifaiFace.bottom_row * height),
+      rightCol: width - (clarifaiFace.right_col * width),
+      bottomRow: height - (clarifaiFace.bottom_row * height)
     }
   }
   
@@ -51,9 +51,8 @@ class App extends Component {
 
     this.setState({ imageUrl: this.state.input });
 
-    app.models
-      .predict(
-        Clarifai.FACE_DETECT_MODEL,
+    app.models.predict(
+      Clarifai.FACE_DETECT_MODEL,
         this.state.input)
       .then(response => this.displayFaceBox(this.calculateFaceLocation(response)))
       .catch(err => console.log(err));
@@ -68,7 +67,7 @@ class App extends Component {
         <ParticlesBg className="App" type="cobweb" color="#64748b"  num={200} bg={true} />
         <div >       
           
-          
+          <Signin />
           <Navigation />
           <Logo />
           <Rank />

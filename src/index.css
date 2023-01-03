@@ -5,7 +5,9 @@ body {
     sans-serif;
     background-image: linear-gradient(to top, #d299c2 0%, #fef9d7 100%);
     min-height: 100vh;
-    box-sizing: border-box;
+    background-attachment: fixed;
+    
+    
 }
 
 
