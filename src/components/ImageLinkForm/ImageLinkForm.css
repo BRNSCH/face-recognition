@@ -29,10 +29,15 @@
     border: none;
     background-color: #989898;
     text-align: center;
+    
 }
  input:focus {
      outline: 1px solid rgb(168, 74, 168);
 
+ }
+ input:hover{
+     background-color: black;
+     color: antiquewhite;
  }
 .form button{
     font-size:18px ;
