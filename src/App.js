@@ -37,7 +37,19 @@ class App extends Component {
     }
   }
 
+  loadUser = (data) => {
+    this.setState({
+      user: {
 
+        id: data.id,
+        name: data.name,
+        email: data.email,
+        entries: data.entries,
+        joined: data.joined
+      }
+    }
+    )
+  }
 
   calculateFaceLocation = (data) => {
     const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
@@ -64,9 +76,8 @@ class App extends Component {
 
     this.setState({ imageUrl: this.state.input });
 
-    app.models.predict(
-      Clarifai.FACE_DETECT_MODEL,
-        this.state.input)
+    app.models.predict(Clarifai.FACE_DETECT_MODEL,
+      this.state.input)
       .then(response => this.displayFaceBox(this.calculateFaceLocation(response)))
       .catch(err => console.log(err));
 
@@ -106,7 +117,7 @@ class App extends Component {
             : (
               this.state.route === 'signin'
                 ? < SignIn onRouteChange={this.onRouteChange} />
-                : <Register onRouteChange={this.onRouteChange} />
+                : <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
             )
             
             

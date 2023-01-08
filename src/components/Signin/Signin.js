@@ -8,8 +8,9 @@ class SignIn extends React.Component  {
     constructor(props) {
         super(props)
         this.state = {
-             signInMail: '',
-             signInPassword:''
+             email: '',
+             password: '',
+             name:''
         }
     }
     onEmailChange = (event) => {
@@ -26,21 +27,22 @@ class SignIn extends React.Component  {
             method: 'post',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                email: this.state.signInMail,
-                password: this.state.signInPassword
+               email: this.state.signInMail,
+               password: this.state.signInPassword
             })
         })
             .then(response => response.json())
             .then(data => {
-                if (data === 'success') { }
-                this.props.onRouteChange('home');
+                if (data === 'success') {
+                    this.props.onRouteChange('home');
+                }
             })
 
         
     }
 
     render() {
-        const { onRouteChange } = this.props;
+       
           return (
 
        
@@ -77,7 +79,7 @@ class SignIn extends React.Component  {
                     </div>
                     <div className="lh-copy mt3">
                         <p
-                              onClick={() => onRouteChange('register')}
+                              onClick={this.onSubmitSignIn}
                         href="#0" className="tc f6 link dim black db pointer">Register</p>
                         
                     </div>

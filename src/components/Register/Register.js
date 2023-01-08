@@ -24,18 +24,22 @@ class Register extends React.Component {
     }
 
     onSubmitSignIn = () => {
-        console.log(this.state)
-        fetch('http://localhost:3001/signin', {
+        //console.log(this.state)
+        fetch('http://localhost:3001/register', {
             method: 'post',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                email: this.state.signInMail,
-                password: this.state.signInPassword
+                
+                email: this.state.email,
+                password: this.state.password,
+                name: this.state.name
+
             })
         })
             .then(response => response.json())
             .then(user => {
                 if (user) {
+                    this.props.loadUser(user);
                     this.props.onRouteChange('home');
                 }
             })
