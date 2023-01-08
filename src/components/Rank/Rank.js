@@ -2,17 +2,17 @@ import React from 'react';
 import './Rank.css'
 
 
-const Rank = () => {
+const Rank = ({name,entries}) => {
 
     return (
 
         <div className='rank '>
             
                 <div className=' f3'>
-                  {'Your current rank is... '}
+                {`${name}, Your current rank is... `}
             </div>
             <div className=' f1'>
-                {'  #5'}
+                {entries}
             </div>
            
 
