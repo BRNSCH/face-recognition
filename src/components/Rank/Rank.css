@@ -6,5 +6,6 @@
     align-items: center;
     font-size: 26px;
     font-weight: bold;
-    color: rgb(63, 61, 61);
+    color: rgb(0, 0, 0);
+    text-shadow: 6px 4px 24px black, 0 0 1em rgba(0, 0, 0, 0.527), 0 0 0.2em rgba(0, 0, 0, 0.527);
 }

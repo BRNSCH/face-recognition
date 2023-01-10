@@ -16,8 +16,8 @@
 }
 .form-p{
     text-align: center;
-    text-shadow: 10px 7px 22px black, 0 0 1em rgba(0, 0, 0, 0.527), 0 0 0.2em rgba(0, 0, 0, 0.527);
-        color: rgb(12, 12, 12);
+    text-shadow: 6px 4px 14px black, 0 0 1em rgba(0, 0, 0, 0.527), 0 0 0.2em rgba(0, 0, 0, 0.527);
+        color: rgb(5, 5, 5);
 }
 .form input{
     box-shadow: rgba(0, 0, 0, 0.527) 0px 22px 70px 4px;   
